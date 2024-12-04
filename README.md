@@ -1,11 +1,17 @@
-# Express API Starter Project
+# Project Summary
 
-This project includes the packages and babel setup for an express server, and is just meant to make things a little simpler to get up and running with.
+This project involves building a RESTful API using Node.js and Express to manage and display information about board games. The goal is to implement multiple endpoints that meet specific requirements:
 
-## Getting started
+Documentation at the root (/) endpoint: The API should include a root endpoint providing documentation about all available endpoints and their functionalities.
 
-Install dependencies with `npm install`, then start the server by running `npm run dev`
+Data management endpoints: At least three endpoints should be implemented to handle and return:
+
+A collection of results (e.g., an array of board games).
+
+A single result (e.g., a specific board game based on a unique identifier).
+
+RESTful structure: The API must follow REST principles and adhere to clean coding guidelines.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+

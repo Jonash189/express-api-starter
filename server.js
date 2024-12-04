@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Dokumentation av API
+// API Documentation
 app.get("/", (req, res) => {
   res.json({
     message: "Welcome to the Jonas boardgames API! Choose from the endpoints below:",
@@ -16,17 +16,17 @@ app.get("/", (req, res) => {
       "/boardgames": "Explore all boardgames",
       "/category?category=<category>": "Get all boardgames by category",
       "/maxPlayers?maxPlayers=<number>": "Get all boardgames by maximum number of players",
-      "/boardgames/:id": "Get a single boardgame by ID"
+      "/boardgames/:id": "Get a single boardgames by ID"
     }
   });
 });
 
-// Returnera alla spel
+// Return all boardgames
 app.get("/boardgames", (req, res) => {
   res.json(boardgames);
 });
 
-// Returnera alla spel i en viss kategori
+// Return all boardgames within a specific category
 app.get("/category", (req, res) => {
   const category = req.query.category;
   const filteredGames = boardgames.filter(game =>
@@ -35,7 +35,7 @@ app.get("/category", (req, res) => {
   res.json(filteredGames);
 });
 
-// Returnera alla spel med max antal spelare
+// Return all boardgames with a specific maximum number of players
 app.get("/maxPlayers", (req, res) => {
   const maxPlayers = parseInt(req.query.maxPlayers, 10);
 
@@ -50,7 +50,7 @@ app.get("/maxPlayers", (req, res) => {
   res.json(filteredMaxPlayers);
 });
 
-// Returnera ett specifikt spel baserat på ID
+// Return a specific boardgame by ID
 app.get("/boardgames/:id", (req, res) => {
   const id = parseInt(req.params.id, 10);
   const boardgame = boardgames.find(game => game.id === id);
@@ -62,7 +62,7 @@ app.get("/boardgames/:id", (req, res) => {
   }
 });
 
-// Starta servern
+// Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
